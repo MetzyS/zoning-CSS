@@ -1,0 +1,233 @@
+/* css reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* css reset end */
+
+html {
+  min-width: 320px;
+  max-width: 800px;                            /*  Permet   */
+  margin: auto;                                /*    de     */
+  font-size:12pt;                              /*  centrer  */
+}
+
+.container {
+  height: 100vh;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);     /* 1)  crée 4 fois 1 fraction (colonne) */ 
+  grid-template-rows: repeat(8,1fr);        /* 2)  crée 8 lignes de 1 fraction (ligne) */
+  grid-template-areas:                       /* 4)  organise le template avec les noms que l'on a donné */
+
+  "header header header header"
+  "header header header header"
+  "nav nav nav nav"
+  "section section section side"
+  "section section section side"
+  "section section section side"
+  "section section section side"
+  "footer footer footer footer";
+  grid-gap: 10px;
+}
+
+.container {
+  box-sizing: border-box;
+  border: 20px solid rgb(19, 19, 19);
+}
+
+.header, .nav, .section, .article, .article2, .side, .side2, .footer {
+box-sizing: border-box;
+border: 5px solid black;
+}
+
+.header {
+  text-align: center;
+  grid-area: header;                         /* 3)  donne un nom a la zone */
+  background-color:orange;
+}
+.nav {
+  grid-area: nav;
+  padding: 35px 0 35px ;
+  text-align: center;
+  background-color: skyblue;
+}
+.navtitle {
+  float:left;
+}
+li {
+  display: inline;
+}
+.vertical-line {
+  border-right: 1px solid black;
+padding: 0 5px;
+
+}
+.text {
+  grid-area: text;
+  background-color: grey;
+}
+
+.leconde {
+  display:block;
+  text-align: center;
+}
+
+.section {
+  display:grid;                              /* 5) crée un sub-grid pour pouvoir caler les élements */
+  min-width: 300px;
+  min-height: 300px;
+  grid-template-columns: repeat(6, 1fr) ;    /* 6) crée 3* 1 colonne */
+  grid-template-rows: 0.1fr 1fr 1fr;        /* 7) crée 2* 1 ligne, box se divise donc en 2  */
+  grid-template-areas:
+  "text text text text text text"
+  "article article article article article article"
+  "article2 article2 article2 article2 side2 side2";
+  grid-gap: 2%;
+  grid-area: section;
+  padding: 2%;
+  background-color: grey;
+}
+
+.article {
+  grid-area: article;
+  background-color: dodgerblue;
+}
+
+.article2 {
+  grid-area: article2;
+  background-color: dodgerblue;
+}
+
+.side {
+  grid-area: side;
+  background-color: brown;
+}
+
+.side2 {
+  grid-area: side2;
+  background-color: brown;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: olive;
+}
+
